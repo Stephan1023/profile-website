@@ -1,6 +1,6 @@
 <div class="love-page">
   <header class="love-header">
-    <a routerLink="/" class="love-back">← Back to home</a>
+    <a (click)="reset()" type="button" class="love-back">Reset</a>
   </header>
 
   <main class="love-card">
@@ -12,7 +12,8 @@
       </p>
 
       <div class="love-actions" #arena>
-        <button #yesButton class="love-button yes" type="button" (click)="onYes()">
+        <button #yesButton class="love-button yes" type="button" (click)="onYes()"
+          [class.yes-hidden]="proposalAccepted">
           Yes 💖
         </button>
         <button
@@ -21,6 +22,7 @@
           type="button"
           (pointerenter)="onNoAttempt()"
           (pointerdown)="onNoAttempt()"
+          [class.no-hidden]="proposalAccepted"
           [style.transform]="'translate(' + noOffset.x + 'px, ' + noOffset.y + 'px)'"
         >
           No

@@ -24,11 +24,22 @@ export class LoveButtonComponent implements AfterViewInit {
     this.proposalAccepted = true;
   }
 
+  reset(): void {
+    this.proposalAccepted = false;
+    this.placeNoButtonNearYes();
+  }
+
   onNoAttempt(): void {
+    if (!this.noButton || !this.yesButton || !this.arena) {
+      return;
+    }
     this.randomizeNoButton();
   }
 
   private placeNoButtonNearYes(): void {
+    if (!this.noButton || !this.yesButton || !this.arena) {
+      return;
+    }
     const { arenaRect, buttonRect, anchor } = this.getLayout();
     const padding = 12;
     const maxX = Math.max(0, arenaRect.width - buttonRect.width - padding * 2);
@@ -44,6 +55,9 @@ export class LoveButtonComponent implements AfterViewInit {
   }
 
   private randomizeNoButton(): void {
+    if (!this.noButton || !this.yesButton || !this.arena) {
+      return;
+    }
     const { arenaRect, buttonRect, anchor } = this.getLayout();
     const padding = 10;
     const maxX = Math.max(0, arenaRect.width - buttonRect.width - padding * 2);
@@ -71,6 +85,9 @@ export class LoveButtonComponent implements AfterViewInit {
     buttonRect: DOMRect;
     anchor: { x: number; y: number; width: number; height: number };
   } {
+    if (!this.noButton || !this.yesButton || !this.arena) {
+      throw new Error('Layout elements are not available.');
+    }
     const arenaRect = this.arena.nativeElement.getBoundingClientRect();
     const buttonRect = this.noButton.nativeElement.getBoundingClientRect();
     const yesRect = this.yesButton.nativeElement.getBoundingClientRect();

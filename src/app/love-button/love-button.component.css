@@ -99,13 +99,23 @@
 
 .love-button.no {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 70%;
+  top: 34%;
   background: #fff;
   color: #e11d48;
   border: 1px solid rgba(225, 29, 72, 0.4);
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
   z-index: 3;
+}
+
+.love-button.no.no-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.love-button.yes.yes-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .love-response {
