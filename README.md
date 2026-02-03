@@ -42,6 +42,10 @@ The site will be available at `https://<your-username>.github.io/<your-repo>/`.
 
 Any static host (Netlify, Vercel, Cloudflare Pages, S3) works by uploading the `dist/profile-website` folder after running `ng build`.
 
+### Troubleshooting GitHub Pages
+
+If the deploy workflow fails with a "Get Pages site" or "Not Found" error, double-check that **Settings → Pages → Build and deployment** is set to **GitHub Actions**. The workflow now attempts to enable Pages automatically, but organization policies can still require you to enable it manually first.
+
 ## Customize the content
 
 - Update the layout and copy in `src/app/app.html`.
