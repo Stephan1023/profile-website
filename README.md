@@ -1,4 +1,4 @@
-# Profile Website
+# Profile Website For my own profile
 
 A modern, single-page profile website built with Angular. It includes sections for a hero intro, about, skills, projects, and contact.
 
