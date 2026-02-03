@@ -38,6 +38,8 @@ The site will be available at `https://<your-username>.github.io/<your-repo>/`.
 
 > Note: The workflow builds with `--base-href "/<repo>/"`. If you use a custom domain or want to host at the root, update the build step in `.github/workflows/deploy-pages.yml` to use `--base-href "/"`.
 
+> Output path tip: With the current Angular builder, the production build outputs to `dist/profile-website/browser`. The Pages workflow uploads that folder so `index.html` is at the root of the deployed site.
+
 ### Other hosting options
 
 Any static host (Netlify, Vercel, Cloudflare Pages, S3) works by uploading the `dist/profile-website` folder after running `ng build`.
