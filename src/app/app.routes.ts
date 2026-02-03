@@ -8,7 +8,7 @@ export const routes: Routes = [
 		component: HomeComponent
 	},
 	{
-		path: 'love-button',
+		path: 'proposal',
 		component: LoveButtonComponent
 	},
 	{
