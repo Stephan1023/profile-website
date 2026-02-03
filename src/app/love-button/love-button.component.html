@@ -1,0 +1,33 @@
+<div class="love-page">
+  <header class="love-header">
+    <a routerLink="/" class="love-back">← Back to home</a>
+  </header>
+
+  <main class="love-card">
+    <p class="love-eyebrow">For the love of my life</p>
+    <h1>Will you be my Valentine?</h1>
+    <p class="love-subtitle">
+      I have a question that only you can answer. Choose wisely 😄
+    </p>
+
+    <div class="love-arena" #arena>
+      <button class="love-button yes" type="button" (click)="onYes()">Yes 💖</button>
+      <button
+        #noButton
+        class="love-button no"
+        type="button"
+        (mouseenter)="onNoAttempt()"
+        (touchstart)="onNoAttempt()"
+        (click)="onNoAttempt()"
+        [style.transform]="'translate(' + noOffset.x + 'px, ' + noOffset.y + 'px)'"
+      >
+        No
+      </button>
+    </div>
+
+    <div class="love-response" *ngIf="proposalAccepted">
+      <h2>Yay! 💕</h2>
+      <p>You just made me the happiest person ever. Let’s celebrate Valentine’s Day together!</p>
+    </div>
+  </main>
+</div>
